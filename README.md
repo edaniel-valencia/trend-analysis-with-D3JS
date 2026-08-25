@@ -43,21 +43,15 @@ trend-analysis-with-D3JS/
 
 Debido a que el proyecto utiliza el patrón MVC con módulos nativos de JavaScript (`import` / `export`) y realiza la carga de archivos locales (`datos.csv`), los navegadores modernos bloquearán su ejecución si intentas abrir el archivo `index.html` directamente (debido a las políticas de seguridad CORS).
 
-Para visualizar el proyecto correctamente, debes levantar un servidor web local:
+Para visualizar el proyecto correctamente, debes levantar el servidor de desarrollo:
 
 1. Clona el repositorio o abre tu terminal en la carpeta principal del proyecto.
-2. Inicia un servidor web. Algunas opciones rápidas son:
+2. Ejecuta el entorno de desarrollo con el siguiente comando:
 
-   **Con Python 3:**
    ```bash
-   python3 -m http.server 8000
+   npm run dev
    ```
-
-   **Con Node.js (npx):**
-   ```bash
-   npx http-server
-   ```
-3. Abre tu navegador y navega a `http://localhost:8000`.
+3. Abre tu navegador en la URL que indique la consola (usualmente `http://localhost:3000` o similar).
 
 ## 👥 Equipo de Trabajo
 
