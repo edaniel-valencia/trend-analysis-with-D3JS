@@ -1,24 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-<<<<<<< HEAD
-    <!-- Es el enca -->
-    <head>    
-=======
-    
-      <script src="https://d3js.org/d3.v6.min.js"></script>
-
->>>>>>> 96a168620786efb8a39bd1f05306e2f047b9f82b
+    <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>UNIR - D3JS</title>
+        <meta name="description" content="Análisis tendencias en D3.js" />
+        <meta name="author" content="Team UNIR" />
+        <title>UNIR - Análisis de Tendencias D3.js</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-        <!-- Libreria D3.js Version 6 -->
-        <!-- D3.js (Data-Driven Documents) es una biblioteca de JavaScript ampliamente utilizada para crear visualizaciones de datos en la web. La versión que se utilizará en esta documentación es D3.js v6, que se carga desde una ubicación en línea. -->
-        <!-- Para comenzar a utilizar D3.js v6 en tu proyecto web, simplemente agrega la siguiente etiqueta `script` a tu archivo HTML para cargar la biblioteca desde su ubicación en línea -->
-
+        <!-- D3.js -->
         <script src="https://d3js.org/d3.v6.min.js"></script>
 
         <!-- Bootstrap icons-->
@@ -30,9 +20,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,300;1,500;1,600;1,700&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet" />
         
-        <!-- Uso CSS (includes Bootstrap)-->
+        <!-- Styles -->
         <link href="css/styles.css" rel="stylesheet" />
-
+        <link href="css/custom.css" rel="stylesheet" />
+    </head>
     <body id="page-top">
 
         <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
@@ -46,35 +37,30 @@
                     <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                         <li class="nav-item"><a class="nav-link me-lg-3" href="#Actividad">Actividad</a></li>
                         <li class="nav-item"><a class="nav-link me-lg-3" href="#Team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link me-lg-3" href="https://github.com/edaniel-valencia/D3JS" target="_blank">Código en GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link me-lg-3" href="https://github.com/edaniel-valencia/D3JS" target="_blank">GitHub Repo</a></li>
                     </ul>
-                    <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" target="_blank" href="UNIR-Actividad-Grupal-D3JS.pdf">
+                    <button class="btn btn-primary rounded-pill px-4 mb-2 mb-lg-0" data-bs-toggle="modal" data-bs-target="#pdfModal">
                         <span class="d-flex align-items-center">
-                            <i class="bi-download me-2"></i>
-                            <span class="small">Descargar Informe</span>
+                            <i class="bi-file-earmark-pdf me-2"></i>
+                            <span class="small fw-bold">Informe</span>
                         </span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </nav>
+
         <header class="masthead">
-            <div class="container px-10">
-              <br>
+            <div class="container px-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-6">
-                        <center>
-                          <div class="mb-5 mb-lg-0 text-center ">
-                            <img  src="assets/img/images.png" alt="..." />
-                              <h1 class=" lh-2 mb-3 font-alt">Análisis tendencias en D3.js</h1>
-                              <p class="lead fw-normal text-muted font-alt">Actividad Grupal</p>
-                             
-                          </div>
-                        </center>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="masthead-device-mockup">
-                          <img  src="assets/img/d3js.webp" alt="..." />
+                        <div class="mb-5 mb-lg-0 text-center text-lg-start">
+                            <h1 class="display-1 lh-1 mb-3">Análisis de Tendencias con D3.js</h1>
+                            <p class="lead fw-normal mb-5">Actividad Grupal para la maestría en UNIR. Visualización dinámica de datos de crimen en España utilizando la potencia de D3.js.</p>
+                            <a class="btn btn-outline-light rounded-pill px-4 py-2" href="#Actividad">Ver Visualización</a>
                         </div>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img class="img-fluid" src="assets/img/d3js.webp" alt="D3.js Logo" style="max-height: 400px;" />
                     </div>
                 </div>            
             </div>                         
@@ -82,79 +68,111 @@
       
         <section id="Actividad">
             <div class="container px-5">
-                <div class="row gx-5 align-items-center">
-                  <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                      <div class="h2 font-alt text-dark text-center mb-4">Datos de crimen en España del 2019 a 2023</div>
-                        <div class="col-xl-12 text-center">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="chart-wrapper">
+                            <h2 class="h2 font-alt text-center mb-4">Evolución del Crimen en España (2019-2023)</h2>
+                            
+                            <!-- D3 Chart Container -->
+                            <div class="chart-container"></div>
+                            
+                            <!-- Load our MVC App as a module -->
+                            <script type="module" src="js/controller.js"></script>
 
-                        <!-- Esta seccion o parte de codigo traemos mediante la clase chart la visualizacion de la grafica -->
-                          <div class="chart"></div>
-                        <!-- Luego hacemos referencias al archivo de javascript -->
-                          <script src="script.js"></script>
-
-
-
+                            <div class="mt-4 text-center">
+                                <p style="text-align: justify; color: var(--text-secondary); font-size: 0.95rem;">
+                                    <b>Contexto:</b> La criminalidad en el conjunto de España ha variado un 5,75 por ciento en lo que va de año (hasta el trimestre 2 de 2023) respecto al mismo periodo del año anterior, con una cifra total de 1.190.319 infracciones penales, según datos del Balance de Criminalidad del Ministerio del Interior.
+                                </p>
+                            </div>
                         </div>
-                        <p style="text-align: justify;"><br>
-                          <b>Crimen:</b>
-                          La criminalidad en el conjunto de España ha variado un 5,75 por ciento en lo que va de año (hasta el trimestre 2 de 2023) respecto al mismo periodo del año anterior, con una cifra total de 1.190.319 infracciones penales, según datos del Balance de Criminalidad del Ministerio del Interior.      </p>        
+                        
+                        <div class="text-center mt-5">
+                            <h4 class="font-alt mb-3 text-white">Fuente de Datos</h4> 
+                            <a class="btn btn-light rounded-pill px-4 py-2" href="datos.csv" download>
+                                <i class="bi-cloud-download me-2"></i> Descargar CSV
+                            </a>
+                        </div>        
                     </div>
-                    <div class="text-center"><h1 class="font-alt ">Descargar DataSet</h1> <a href="datos.csv"><img  src="assets/img/descargar.png" width="50%" /></a></div>        
-                </div>
                 </div>
             </div>
         </section>
-        <section class="bg-light" id="Team">
-            <div class="container px-5">
-                <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
-                  <div class="h1 font-alt text-dark text-center mb-4">Team de la Actividad</div>
-                  <div class="row gx-5">
-                    <div class="col-md-3 mb-5">
-                        <div class="text-center">
-                            <img src="assets/img/daniel.png" width="100%">
 
-                            <h3 class="font-alt">Daniel Valencia</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3 mb-5">                       
-                        <div class="text-center">
-                            <img src="assets/img/francis.png" width="100%">
-                            <h3 class="font-alt">Francis Proaño</h3>
-                        </div>
-                    </div>
-             
-                    <div class="col-md-3 mb-5 mb-md-0">                
-                        <div class="text-center">
-                          <img src="assets/img/leo.png" width="100%">
-                          <h3 class="font-alt">Leonardo Arauz</h3>
-                        </div>
-                    </div>
-                    <div class="col-md-3">                    
-                        <div class="text-center">
-                          <img src="assets/img/suli.png" width="100%">
-                          <h3 class="font-alt">Su Lin Chang</h3>
-                        </div>
-                    </div>
+        <section id="Team">
+            <div class="container px-5">
+                <div class="text-center mb-5">
+                    <h2 class="display-6 font-alt fw-bold text-white mb-2">Nuestro Equipo</h2>
+                    <p class="text-muted">Conoce a los creadores de esta visualización</p>
                 </div>
-            </div>
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-3 col-md-6 mb-5">
+                        <div class="team-member">
+                            <img src="assets/img/daniel.png" alt="Daniel Valencia">
+                            <h3 class="font-alt">Daniel Valencia</h3>
+                            <p class="text-muted small">Desarrollador Full Stack y Analista de Datos Masivos</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5">                       
+                        <div class="team-member">
+                            <img src="assets/img/francis.png" alt="Francis Proaño">
+                            <h3 class="font-alt">Francis Proaño</h3>
+                            <p class="text-muted small">Analista</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5">                
+                        <div class="team-member">
+                            <img src="assets/img/leo.png" alt="Leonardo Arauz">
+                            <h3 class="font-alt">Leonardo Arauz</h3>
+                            <p class="text-muted small">Datos</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-5">                    
+                        <div class="team-member">
+                            <img src="assets/img/suli.png" alt="Su Lin Chang">
+                            <h3 class="font-alt">Su Lin Chang</h3>
+                            <p class="text-muted small">Diseño</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
       
-       
         <!-- Footer-->
-        <footer class="bg-black text-center py-5">
+        <footer class="text-center py-4">
             <div class="container px-5">
                 <div class="text-white-50 small">
-<<<<<<< HEAD
-                    <div class="mb-2"><a href="https://edanielvalencia.com" target="_blank">www.edanielvalencia.com</a></div>                    
-=======
-                    <div class="mb-2">www.edaniel-valencia.com</div>
->>>>>>> 96a168620786efb8a39bd1f05306e2f047b9f82b
+                    <div class="mb-2">
+                        &copy; 2026 UNIR Team. 
+                        <a href="https://edanielvalencia.com" target="_blank" class="ms-2">edanielvalencia.com</a>
+                    </div>
                 </div>
             </div>
         </footer>
 
+        <!-- PDF Modal -->
+        <div class="modal fade" id="pdfModal" tabindex="-1" aria-labelledby="pdfModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content" style="background: var(--glass-bg); backdrop-filter: blur(16px); border: 1px solid var(--glass-border); border-radius: 20px;">
+                    <div class="modal-header border-0">
+                        <h5 class="modal-title font-alt text-dark" id="pdfModalLabel">Previsualización del Informe</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <!-- iframe to preview the PDF -->
+                        <iframe src="UNIR-Actividad-Grupal-D3JS.pdf" width="100%" height="650px" style="border: none; border-radius: 0 0 20px 20px;"></iframe>
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                        <a href="UNIR-Actividad-Grupal-D3JS.pdf" download="UNIR-Actividad-Grupal-D3JS.pdf" class="btn btn-primary rounded-pill px-4">
+                            <i class="bi-download me-2"></i>Descargar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
