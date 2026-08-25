@@ -49,6 +49,7 @@ Para visualizar el proyecto correctamente, debes levantar el servidor de desarro
 2. Ejecuta el entorno de desarrollo con el siguiente comando:
 
    ```bash
+   npm i
    npm run dev
    ```
 3. Abre tu navegador en la URL que indique la consola (usualmente `http://localhost:3000` o similar).
