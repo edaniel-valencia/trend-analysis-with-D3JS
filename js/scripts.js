@@ -31,4 +31,11 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // Dynamically set current year in footer
+    const currentYearSpan = document.body.querySelector('#current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+
 });
+
